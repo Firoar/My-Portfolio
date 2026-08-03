@@ -29,6 +29,9 @@ import {
   siGit,
   siPostman,
   siElectron,
+  siJenkins,
+  siSupabase,
+  siGithub,
 } from 'simple-icons';
 import type { SimpleIcon } from 'simple-icons';
 
@@ -73,6 +76,9 @@ export const stackIcons: Record<string, StackIcon> = {
   git: pick(siGit),
   postman: pick(siPostman),
   electron: pick(siElectron),
+  jenkins: pick(siJenkins),
+  supabase: pick(siSupabase),
+  github: pick(siGithub),
 };
 
 function pick(icon: SimpleIcon): StackIcon {

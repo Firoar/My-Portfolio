@@ -42,10 +42,10 @@ export const about = {
 export const skills = {
   languages: ['Java', 'Go', 'Python', 'C++', 'JavaScript', 'TypeScript', 'SQL'],
   backend: ['Spring Boot', 'NestJS', 'Node.js', 'Express.js', 'FastAPI', 'Gin'],
-  frontend: ['React', 'Next.js', 'Redux', 'HTML5 Canvas'],
-  cloudDevops: ['AWS', 'Docker', 'Kubernetes', 'Terraform', 'Kafka', 'KEDA'],
-  databases: ['PostgreSQL', 'MySQL', 'MongoDB', 'Firebase'],
-  tools: ['Git', 'Postman', 'WebRTC', 'WebSocket', 'REST APIs', 'OAuth', 'Electron'],
+  frontend: ['React', 'Next.js', 'Redux', 'Zustand', 'HTML5 Canvas'],
+  cloudDevops: ['AWS', 'Docker', 'Kubernetes', 'Terraform', 'Kafka', 'Jenkins', 'CI/CD'],
+  databases: ['PostgreSQL', 'MySQL', 'MongoDB', 'Firebase', 'Supabase'],
+  tools: ['Git', 'Postman', 'OAuth', 'Electron', 'GitHub'],
 } as const;
 
 export const experience = [
