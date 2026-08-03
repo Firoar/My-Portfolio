@@ -1,0 +1,76 @@
+---
+import { contact, site } from '../data/site';
+
+// Turn "https://github.com/yourhandle" into "@yourhandle"
+const handleOf = (url: string) => {
+  const cleaned = url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+  const last = cleaned.split('/').pop() ?? cleaned;
+  return '@' + last.replace(/^@/, '');
+};
+---
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="num">05.</span>
+      <h2>ping contact.txt</h2>
+      <span class="rule"></span>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <p class="contact-blurb reveal">{contact.blurb}</p>
+        <p class="contact-quote reveal">
+          <span class="prompt">$</span> echo "let's build something cool
+          together"
+        </p>
+
+        <div class="contact-cta reveal">
+          <a class="btn primary" href={`mailto:${contact.email}`}>
+            <span class="prompt">$</span> send mail
+          </a>
+          <a class="btn" href={site.resume} target="_blank" rel="noopener">
+            <span class="prompt">→</span> résumé
+          </a>
+          <a class="btn" href={contact.github} rel="noopener">
+            <span class="prompt">></span> github
+          </a>
+          <a class="btn" href={contact.linkedin} rel="noopener">
+            <span class="prompt">></span> linkedin
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-panel reveal">
+        <div class="contact-line">
+          <span class="key">email</span>
+          <span class="val">
+            <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          </span>
+        </div>
+        {contact.socials.map((social) => (
+          <div class="contact-line">
+            <span class="key">{social.label}</span>
+            <span class="val">
+              <a href={social.url} rel="noopener">
+                {handleOf(social.url)}
+              </a>
+            </span>
+          </div>
+        ))}
+        <div class="contact-line">
+          <span class="key">résumé</span>
+          <span class="val">
+            <a href={site.resume} target="_blank" rel="noopener">
+              open résumé →
+            </a>
+          </span>
+        </div>
+        <div class="contact-line">
+          <span class="key">response</span>
+          <span class="val">within 24–48h, usually faster</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

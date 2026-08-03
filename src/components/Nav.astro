@@ -1,0 +1,34 @@
+---
+import { site } from '../data/site';
+
+const links = [
+  { num: '01', label: 'whoami', href: '#about' },
+  { num: '02', label: 'projects', href: '#projects' },
+  { num: '03', label: 'experience', href: '#experience' },
+  { num: '04', label: 'contact', href: '#contact' },
+];
+---
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <span class="prompt">~/</span>
+      <span>portfolio</span>
+      <i class="dot" aria-hidden="true"></i>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      {links.map((link) => (
+        <a href={link.href}>
+          <span>{link.num}</span>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <span class="status-chip" aria-hidden="true">
+      <i></i>
+      sys: online
+    </span>
+  </div>
+</header>

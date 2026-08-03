@@ -1,0 +1,16 @@
+# build output
+dist/
+# generated types
+.astro/
+# dependencies
+node_modules/
+# logs & local build artifacts (build.log, preview.log, install*.log …)
+*.log
+npm-debug.log*
+# environment variables
+.env
+.env.production
+# macOS
+.DS_Store
+# local resume source (optional — keep out of the public repo if you prefer)
+info.txt.txt

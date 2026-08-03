@@ -1,0 +1,26 @@
+{
+  "name": "my-protfolio",
+  "version": "1.0.0",
+  "description": "A developer portfolio built with Astro — terminal aesthetic.",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "keywords": [
+    "astro",
+    "portfolio",
+    "developer",
+    "static-site"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/three": "^0.185.3",
+    "astro": "^7.1.6",
+    "simple-icons": "^16.28.0",
+    "three": "^0.185.1"
+  }
+}

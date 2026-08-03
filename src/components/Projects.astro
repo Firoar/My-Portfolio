@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import TechIcon from './TechIcon.astro';
+
+// Pulled straight from `src/content/projects/*.md`
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="num">03.</span>
+      <h2>ls ./projects</h2>
+      <span class="rule"></span>
+    </div>
+
+    <div class="project-list">
+      {projects.map((project, i) => (
+        <article
+          class="project-row reveal"
+          style={`transition-delay: ${(i % 3) * 80}ms`}
+        >
+          <div class="project-top">
+            <h3 class="project-name">
+              <span class="dir">./</span>
+              {project.data.title}
+            </h3>
+            <span class={`status ${project.data.status}`}>
+              {project.data.status}
+            </span>
+          </div>
+
+          <p class="project-desc">{project.data.description}</p>
+
+          <ul class="project-tags">
+            {project.data.stack.map((tag) => (
+              <li class="tag">
+                <TechIcon name={tag} size={14} />
+                {tag}
+              </li>
+            ))}
+          </ul>
+
+          <div class="project-links">
+            {project.data.demo && <a href={project.data.demo}>↗ live</a>}
+            {project.data.repo && <a href={project.data.repo}>git clone</a>}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

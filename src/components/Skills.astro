@@ -1,0 +1,39 @@
+---
+import { skills } from '../data/site';
+import TechIcon from './TechIcon.astro';
+
+const categories = [
+  { label: 'languages', items: skills.languages },
+  { label: 'backend', items: skills.backend },
+  { label: 'frontend', items: skills.frontend },
+  { label: 'cloud / devops', items: skills.cloudDevops },
+  { label: 'databases', items: skills.databases },
+  { label: 'tools', items: skills.tools },
+];
+---
+
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="num">02.</span>
+      <h2>stack.config</h2>
+      <span class="rule"></span>
+    </div>
+
+    <div class="skills-wrap">
+      {categories.map((cat, i) => (
+        <div class="skills-cat reveal" style={`transition-delay: ${i * 60}ms`}>
+          <h3>{cat.label}</h3>
+          <ul class="chips">
+            {cat.items.map((item) => (
+              <li class="chip">
+                <TechIcon name={item} />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

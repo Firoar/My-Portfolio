@@ -1,0 +1,35 @@
+---
+import { about } from '../data/site';
+---
+
+<section class="section about" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="num">01.</span>
+      <h2>about.txt</h2>
+      <span class="rule"></span>
+    </div>
+
+    <div class="about-grid">
+      <div>
+        {about.lines.map((line) => (
+          <p class="line reveal">
+            <span class="arrow">→</span>
+            <span>{line}</span>
+          </p>
+        ))}
+
+        <p class="line reveal">
+          <span class="arrow">→</span>
+          <span>Open to interesting problems — say hi, my inbox is always on.</span>
+        </p>
+      </div>
+
+      <div class="about-facts">
+        {about.facts.map((fact) => (
+          <p class="about-fact reveal">{fact}</p>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

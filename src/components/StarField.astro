@@ -1,0 +1,30 @@
+---
+// Ambient particle field rendered with Three.js.
+// Sits behind the content, subtly drifting, matching the terminal accent.
+// The Three.js code itself is lazy-loaded from src/scripts/starfield.ts
+// so it never blocks first paint (and never loads at all for users with
+// WebGL disabled or reduced-motion preferences).
+---
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canvas = document.getElementById('starfield');
+  if (!canvas) throw new Error('starfield canvas missing');
+
+  // WebGL unavailable or the user prefers reduced motion →
+  // drop the canvas entirely and let the CSS backdrop show.
+  if (!window.WebGLRenderingContext || reduce) {
+    canvas.remove();
+  } else {
+    // Load Three.js only after the browser is idle.
+    const start = () =>
+      import('../scripts/starfield').then((m) => m.initStarfield(canvas));
+    if ('requestIdleCallback' in window) {
+      (window as any).requestIdleCallback(start, { timeout: 1500 });
+    } else {
+      setTimeout(start, 250);
+    }
+  }
+</script>
