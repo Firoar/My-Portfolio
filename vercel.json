@@ -7,7 +7,7 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/:path((?!.*\\.[a-zA-Z0-9]{1,8}$).*)",
+      "source": "/:path((?!.*\\.[a-zA-Z0-9]{1,8}$).+)",
       "destination": "/",
       "statusCode": 308
     }
