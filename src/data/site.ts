@@ -7,7 +7,7 @@ export const site = {
   /** Your name as shown in the terminal hero */
   name: 'Chiranjivi S',
   /** Short title tag */
-  title: 'chiru@dev — software engineer',
+  title: 'Chiranjivi S',
   /** One-liner under your name */
   role: 'Software Engineer · Backend & Cloud',
   /** Short tagline shown in the hero */
