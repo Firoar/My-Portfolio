@@ -66,12 +66,6 @@ export const experience = [
       'Researched AI-human interaction patterns and LLM integration in HCI under Dr. Sridhar Chimalakonda.',
     ],
   },
-  {
-    period: 'Nov 2022 — Apr 2026',
-    role: 'B.Tech in Computer Science',
-    company: 'IIIT Kottayam',
-    notes: ['Graduating with CGPA 8.50, focused on systems, algorithms and distributed computing.'],
-  },
 ] as const;
 
 export const contact = {
