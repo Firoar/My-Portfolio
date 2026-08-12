@@ -4,5 +4,12 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path((?!.*\\.[a-zA-Z0-9]{1,8}$).*)",
+      "destination": "/",
+      "statusCode": 308
+    }
+  ]
 }
