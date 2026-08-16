@@ -1,0 +1,288 @@
+// ============================================================================
+// 🎨 SKILL ICONS
+// ----------------------------------------------------------------------------
+// Maps skill names to monochrome brand icons (from `simple-icons`, build-time
+// only). You do NOT need to edit this file — icons are matched automatically
+// from the skill name in `profile.ts`. Skills with no matching icon simply
+// show as plain text.
+//
+// Note: icons are accessed via the module namespace (not named imports) as a
+// workaround for a bundler quirk with simple-icons' giant export file.
+//
+// To add a new icon: add an entry to `iconMap` below using the camelCase name
+// of the icon in simple-icons, e.g. `postgresql: icons.siPostgresql`.
+// ============================================================================
+
+import * as simpleIcons from "simple-icons";
+
+type SkillIcon = { path: string; title: string };
+const icons = simpleIcons as unknown as Record<string, SkillIcon>;
+
+// Normalized skill name → icon
+const iconMap: Record<string, SkillIcon> = {
+  // Languages
+  // Custom icon — Java was removed from simple-icons (trademark reasons),
+  // path extracted from the archived simple-icons 5.24.0 release.
+  java: {
+    path: "M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639",
+    title: "Java",
+  },
+  javascript: icons.siJavascript,
+  typescript: icons.siTypescript,
+  python: icons.siPython,
+  go: icons.siGo,
+  rust: icons.siRust,
+  php: icons.siPhp,
+  ruby: icons.siRuby,
+  swift: icons.siSwift,
+  kotlin: icons.siKotlin,
+  scala: icons.siScala,
+  cplusplus: icons.siCplusplus,
+  dotnet: icons.siDotnet,
+  solidity: icons.siSolidity,
+  elixir: icons.siElixir,
+  zig: icons.siZig,
+  dart: icons.siDart,
+  html5: icons.siHtml5,
+  css: icons.siCss,
+  sass: icons.siSass,
+  less: icons.siLess,
+  markdown: icons.siMarkdown,
+  json: icons.siJson,
+  yaml: icons.siYaml,
+  bash: icons.siGnubash,
+
+  // Frameworks & libraries
+  react: icons.siReact,
+  reactnative: icons.siReact,
+  reactrouter: icons.siReactrouter,
+  redux: icons.siRedux,
+  reactquery: icons.siReactquery,
+  reacthookform: icons.siReacthookform,
+  astro: icons.siAstro,
+  nodejs: icons.siNodedotjs,
+  deno: icons.siDeno,
+  bun: icons.siBun,
+  nextjs: icons.siNextdotjs,
+  nestjs: icons.siNestjs,
+  nuxt: icons.siNuxt,
+  vue: icons.siVuedotjs,
+  svelte: icons.siSvelte,
+  angular: icons.siAngular,
+  ember: icons.siEmberdotjs,
+  backbone: icons.siBackbone,
+  tailwindcss: icons.siTailwindcss,
+  bootstrap: icons.siBootstrap,
+  bulma: icons.siBulma,
+  chakraui: icons.siChakraui,
+  mui: icons.siMui,
+  antdesign: icons.siAntdesign,
+  semanticui: icons.siSemanticui,
+  radixui: icons.siRadixui,
+  shadcnui: icons.siShadcnui,
+  express: icons.siExpress,
+  fastapi: icons.siFastapi,
+  gin: icons.siGin,
+  django: icons.siDjango,
+  flask: icons.siFlask,
+  spring: icons.siSpring,
+  prisma: icons.siPrisma,
+  drizzle: icons.siDrizzle,
+  sequelize: icons.siSequelize,
+  hasura: icons.siHasura,
+  expo: icons.siExpo,
+  flutter: icons.siFlutter,
+  electron: icons.siElectron,
+  tauri: icons.siTauri,
+  capacitor: icons.siCapacitor,
+  d3: icons.siD3,
+  threedotjs: icons.siThreedotjs,
+  gsap: icons.siGsap,
+  framer: icons.siFramer,
+  zod: icons.siZod,
+  web3: icons.siWeb3dotjs,
+  socketdotio: icons.siSocketdotio,
+  gatsby: icons.siGatsby,
+  remix: icons.siRemix,
+
+  // Databases & data
+  // Custom icon — simple-icons has no plain "SQL" brand, so this is a
+  // classic database glyph drawn by hand.
+  sql: {
+    path: "M12 4c-4.42 0-8 1.34-8 3s3.58 3 8 3 8-1.34 8-3-3.58-3-8-3zM4 7v6c0 1.66 3.58 3 8 3s8-1.34 8-3V7c0 1.66-3.58 3-8 3s-8-1.34-8-3z",
+    title: "SQL",
+  },
+  postgresql: icons.siPostgresql,
+  mongodb: icons.siMongodb,
+  redis: icons.siRedis,
+  mysql: icons.siMysql,
+  sqlite: icons.siSqlite,
+  sqlalchemy: icons.siSqlalchemy,
+  planetscale: icons.siPlanetscale,
+  neon: icons.siNeon,
+  turso: icons.siTurso,
+  pocketbase: icons.siPocketbase,
+  supabase: icons.siSupabase,
+  elasticsearch: icons.siElasticsearch,
+  kibana: icons.siKibana,
+  kafka: icons.siApachekafka,
+  rabbitmq: icons.siRabbitmq,
+  celery: icons.siCelery,
+  graphql: icons.siGraphql,
+  polars: icons.siPolars,
+  spark: icons.siApachespark,
+  airflow: icons.siApacheairflow,
+  huggingface: icons.siHuggingface,
+  langchain: icons.siLangchain,
+
+  // Tools & platforms
+  git: icons.siGit,
+  github: icons.siGithub,
+  jenkins: icons.siJenkins,
+  githubactions: icons.siGithubactions,
+  gitlab: icons.siGitlab,
+  bitbucket: icons.siBitbucket,
+  githubcopilot: icons.siGithubcopilot,
+  docker: icons.siDocker,
+  kubernetes: icons.siKubernetes,
+  terraform: icons.siTerraform,
+  ansible: icons.siAnsible,
+  nginx: icons.siNginx,
+  linux: icons.siLinux,
+  ubuntu: icons.siUbuntu,
+  debian: icons.siDebian,
+  archlinux: icons.siArchlinux,
+  fedora: icons.siFedora,
+  centos: icons.siCentos,
+  alpinelinux: icons.siAlpinelinux,
+  nixos: icons.siNixos,
+  macos: icons.siMacos,
+  raspberrypi: icons.siRaspberrypi,
+  arduino: icons.siArduino,
+  espressif: icons.siEspressif,
+  vite: icons.siVite,
+  webpack: icons.siWebpack,
+  babel: icons.siBabel,
+  pnpm: icons.siPnpm,
+  yarn: icons.siYarn,
+  npm: icons.siNpm,
+  homebrew: icons.siHomebrew,
+  gulp: icons.siGulp,
+  grunt: icons.siGrunt,
+  gradle: icons.siGradle,
+  maven: icons.siApachemaven,
+  composer: icons.siComposer,
+  nuget: icons.siNuget,
+  eslint: icons.siEslint,
+  prettier: icons.siPrettier,
+  storybook: icons.siStorybook,
+  jest: icons.siJest,
+  vitest: icons.siVitest,
+  testinglibrary: icons.siTestinglibrary,
+  mocha: icons.siMocha,
+  chai: icons.siChai,
+  cypress: icons.siCypress,
+  selenium: icons.siSelenium,
+  appium: icons.siAppium,
+  puppeteer: icons.siPuppeteer,
+  cheerio: icons.siCheerio,
+  postman: icons.siPostman,
+  insomnia: icons.siInsomnia,
+  figma: icons.siFigma,
+  jira: icons.siJira,
+  confluence: icons.siConfluence,
+  discord: icons.siDiscord,
+  zoom: icons.siZoom,
+  vim: icons.siVim,
+  neovim: icons.siNeovim,
+  emacs: icons.siGnuemacs,
+  firebase: icons.siFirebase,
+  // Custom icons — not in the installed simple-icons version, added manually
+  // (path extracted from the archived simple-icons 9.21.0 release).
+  aws: {
+    path: "M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zM21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z",
+    title: "Amazon Web Services",
+  },
+  googlecloud: icons.siGooglecloud,
+  cloudflare: icons.siCloudflare,
+  vercel: icons.siVercel,
+  netlify: icons.siNetlify,
+  cloudinary: icons.siCloudinary,
+  algolia: icons.siAlgolia,
+  digitalocean: icons.siDigitalocean,
+  hetzner: icons.siHetzner,
+  prometheus: icons.siPrometheus,
+  grafana: icons.siGrafana,
+  datadog: icons.siDatadog,
+  sentry: icons.siSentry,
+  newrelic: icons.siNewrelic,
+  jaeger: icons.siJaeger,
+  opentelemetry: icons.siOpentelemetry,
+  k6: icons.siK6,
+  pytorch: icons.siPytorch,
+  tensorflow: icons.siTensorflow,
+  pandas: icons.siPandas,
+  numpy: icons.siNumpy,
+  keras: icons.siKeras,
+  ethereum: icons.siEthereum,
+  hexo: icons.siHexo,
+  hugo: icons.siHugo,
+  jekyll: icons.siJekyll,
+  eleventy: icons.siEleventy,
+};
+
+// Short names / common variants (exact-normalized match)
+const aliases: Record<string, SkillIcon> = {
+  golang: icons.siGo,
+  ts: icons.siTypescript,
+  js: icons.siJavascript,
+  node: icons.siNodedotjs,
+  next: icons.siNextdotjs,
+  tailwind: icons.siTailwindcss,
+  postgres: icons.siPostgresql,
+  mongo: icons.siMongodb,
+  vuejs: icons.siVuedotjs,
+  sveltejs: icons.siSvelte,
+  cpp: icons.siCplusplus,
+  csharp: icons.siDotnet,
+  net: icons.siDotnet,
+  "c#": icons.siDotnet,
+  sh: icons.siGnubash,
+  web3js: icons.siWeb3dotjs,
+  gcp: icons.siGooglecloud,
+  copilot: icons.siGithubcopilot,
+  socketio: icons.siSocketdotio,
+  threejs: icons.siThreedotjs,
+  three: icons.siThreedotjs,
+  "d3.js": icons.siD3,
+  "react-query": icons.siReactquery,
+  shadcn: icons.siShadcnui,
+  mui: icons.siMui,
+  "p5.js": icons.siP5dotjs,
+  "c++": icons.siCplusplus,
+};
+
+const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9+]/g, "");
+
+/** Looks up a monochrome icon for a skill name, or undefined for plain text. */
+export function getSkillIcon(skill: string): SkillIcon | undefined {
+  const name = normalize(skill);
+
+  // 1. Exact match
+  if (iconMap[name]) return iconMap[name];
+
+  // 2. Alias match
+  if (aliases[name]) return aliases[name];
+
+  // 3. Partial match — the skill name contains a known icon name.
+  //    Longest matching key wins (e.g. "Tailwind CSS" → tailwindcss).
+  let best: SkillIcon | undefined;
+  let bestLen = 0;
+  for (const [key, icon] of Object.entries(iconMap)) {
+    if (key.length > bestLen && name.includes(key)) {
+      best = icon;
+      bestLen = key.length;
+    }
+  }
+  return best;
+}

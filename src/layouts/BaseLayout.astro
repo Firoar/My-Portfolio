@@ -1,0 +1,90 @@
+---
+import "../styles/global.css";
+import { site, profile, analytics } from "../data/profile";
+
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+
+const { title } = Astro.props as { title?: string };
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={site.description} />
+    <meta property="og:title" content={site.title} />
+    <meta property="og:description" content={site.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={site.url} />
+    <title>{title ?? site.title}</title>
+    <script is:inline>
+      // Apply the saved theme (or default to dark) before first paint, prevents flash
+      (function () {
+        try {
+          var theme = localStorage.getItem("theme");
+          if (theme !== "dark" && theme !== "light") theme = "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <a class="nav-name" href="/">{profile.name}</a>
+        <ul class="nav-links">
+          {navLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+        </ul>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode">☀️</button>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    {
+      analytics.goatcounter && (
+        <script
+          is:inline
+          data-goatcounter={`https://${analytics.goatcounter}.goatcounter.com/count`}
+          async
+          src="//gc.zgo.at/count.js"
+        ></script>
+      )
+    }
+
+    <script>
+      const toggle = document.getElementById("theme-toggle");
+
+      const syncIcon = () => {
+        const isDark =
+          document.documentElement.getAttribute("data-theme") === "dark";
+        const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+        toggle?.setAttribute("aria-label", label);
+        if (toggle) toggle.textContent = isDark ? "☀️" : "🌙";
+      };
+
+      toggle?.addEventListener("click", () => {
+        const html = document.documentElement;
+        const next =
+          html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+        syncIcon();
+      });
+
+      syncIcon();
+    </script>
+  </body>
+</html>

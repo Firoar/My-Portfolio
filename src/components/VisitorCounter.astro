@@ -1,0 +1,34 @@
+---
+// Live visitor counter, powered by GoatCounter's public JSON endpoint.
+// Only rendered when analytics.goatcounter is set (see src/data/profile.ts).
+// Requires "Allow adding visitor counts on your website" to be enabled in
+// the GoatCounter site settings, otherwise it hides itself silently.
+import { analytics } from "../data/profile";
+
+const counterUrl = `https://${analytics.goatcounter}.goatcounter.com/counter/TOTAL.json`;
+---
+
+<p class="visitor-count" data-counter-url={counterUrl} role="status">
+  👀 <span id="visitor-count">…</span> visitors
+</p>
+
+<script is:inline>
+  (function () {
+    var el = document.getElementById("visitor-count");
+    if (!el) return;
+    var host = document.querySelector("[data-counter-url]");
+    if (!host) return;
+
+    fetch(host.getAttribute("data-counter-url"))
+      .then(function (r) {
+        if (!r.ok) throw new Error("counter unavailable");
+        return r.json();
+      })
+      .then(function (d) {
+        el.textContent = d.count;
+      })
+      .catch(function () {
+        host.remove();
+      });
+  })();
+</script>

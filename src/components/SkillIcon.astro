@@ -1,0 +1,21 @@
+---
+import { getSkillIcon } from "../data/skillIcons";
+
+interface Props {
+  skill: string;
+}
+
+const { skill } = Astro.props;
+const icon = getSkillIcon(skill);
+---
+
+{icon && (
+  <svg
+    class="skill-icon"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d={icon.path} fill="currentColor" />
+  </svg>
+)}

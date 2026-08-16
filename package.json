@@ -1,26 +1,22 @@
 {
-  "name": "my-protfolio",
-  "version": "1.0.0",
-  "description": "A developer portfolio built with Astro — terminal aesthetic.",
+  "name": "free-buff-portfolio",
   "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
-  "keywords": [
-    "astro",
-    "portfolio",
-    "developer",
-    "static-site"
-  ],
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "@types/three": "^0.185.3",
-    "astro": "^7.1.6",
+    "astro": "^7.2.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "simple-icons": "^16.28.0",
-    "three": "^0.185.1"
+    "typescript": "^6.0.3"
   }
 }
