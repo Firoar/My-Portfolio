@@ -4,7 +4,7 @@ import { site, profile, analytics } from "../data/profile";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
@@ -46,8 +46,14 @@ const { title } = Astro.props as { title?: string };
           {navLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
         </ul>
         <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode">☀️</button>
+        <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
       </nav>
     </header>
+    <div class="nav-overlay"></div>
 
     <main>
       <slot />
@@ -85,6 +91,41 @@ const { title } = Astro.props as { title?: string };
       });
 
       syncIcon();
+
+      // --- Mobile menu toggle ---
+      const menuBtn = document.getElementById("menu-toggle");
+      const navLinksEl = document.querySelector(".nav-links");
+      const overlay = document.querySelector(".nav-overlay");
+
+      function closeMenu() {
+        menuBtn?.classList.remove("is-open");
+        navLinksEl?.classList.remove("is-open");
+        overlay?.classList.remove("is-open");
+        menuBtn?.setAttribute("aria-expanded", "false");
+        menuBtn?.setAttribute("aria-label", "Open menu");
+        document.body.style.overflow = "";
+      }
+
+      function openMenu() {
+        menuBtn?.classList.add("is-open");
+        navLinksEl?.classList.add("is-open");
+        overlay?.classList.add("is-open");
+        menuBtn?.setAttribute("aria-expanded", "true");
+        menuBtn?.setAttribute("aria-label", "Close menu");
+        document.body.style.overflow = "hidden";
+      }
+
+      menuBtn?.addEventListener("click", () => {
+        const isOpen = menuBtn.classList.contains("is-open");
+        isOpen ? closeMenu() : openMenu();
+      });
+
+      overlay?.addEventListener("click", closeMenu);
+
+      // Close menu when a nav link is clicked
+      navLinksEl?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
     </script>
   </body>
 </html>
