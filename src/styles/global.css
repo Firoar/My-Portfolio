@@ -445,6 +445,18 @@ a:hover {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* --- Desktop sticky header ------------------------------------ */
+
+@media (min-width: 641px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 998;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
 /* --- Responsive -------------------------------------------------- */
 
 @media (max-width: 640px) {
