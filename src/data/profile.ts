@@ -102,6 +102,14 @@ export const skillGroups = [
 // `url` and `repo` are optional — set one or both to "" to hide that link.
 export const projects = [
   {
+    name: "Fourier Series Drawing Machine",
+    description:
+      "Recreates drawings using Fourier Series and FFT, converting an input path into Fourier coefficients and animating rotating epicycles that trace the original image on HTML Canvas.",
+    tech: ["JavaScript", "HTML5 Canvas"],
+    url: "",
+    repo: "https://github.com/Firoar/fourier_series",
+  },
+  {
     name: "JOD Chess Engine",
     description:
       "A custom chess engine in pure JavaScript with full move legality validation, including castling, en passant, check and checkmate detection. Zero external dependencies, PvP with real-time move highlighting.",
@@ -126,12 +134,12 @@ export const projects = [
     repo: "https://github.com/Firoar/PixelVerse",
   },
   {
-    name: "Electro-Sim",
+    name: "CompSim",
     description:
-      "A desktop logic-gate circuit simulator with a drag-and-drop editor and real-time simulation, targeting full simulation of an 8-bit computer.",
-    tech: ["Electron", "React", "TypeScript", "Redux", "C++"],
+      "A desktop logic gate simulator built with Electron, React and TypeScript, featuring a drag-and-drop editor and real-time simulation.",
+    tech: ["Electron", "React", "TypeScript"],
     url: "",
-    repo: "https://github.com/Firoar/Electro-Sim",
+    repo: "https://github.com/Firoar/CompSim",
   },
 ];
 

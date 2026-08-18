@@ -1,14 +1,12 @@
 ---
 // Live visitor counter, powered by GoatCounter's public JSON endpoint.
+// Proxied through a Vercel serverless function (/api/visitor-count) so
+// ad blockers don't block the request.
 // Only rendered when analytics.goatcounter is set (see src/data/profile.ts).
-// Requires "Allow adding visitor counts on your website" to be enabled in
-// the GoatCounter site settings, otherwise it hides itself silently.
 import { analytics } from "../data/profile";
-
-const counterUrl = `https://${analytics.goatcounter}.goatcounter.com/counter/TOTAL.json`;
 ---
 
-<p class="visitor-count" data-counter-url={counterUrl} role="status">
+<p class="visitor-count" role="status">
   👀 <span id="visitor-count">…</span> visitors
 </p>
 
@@ -16,10 +14,8 @@ const counterUrl = `https://${analytics.goatcounter}.goatcounter.com/counter/TOT
   (function () {
     var el = document.getElementById("visitor-count");
     if (!el) return;
-    var host = document.querySelector("[data-counter-url]");
-    if (!host) return;
 
-    fetch(host.getAttribute("data-counter-url"))
+    fetch("/api/visitor-count")
       .then(function (r) {
         if (!r.ok) throw new Error("counter unavailable");
         return r.json();
@@ -28,7 +24,7 @@ const counterUrl = `https://${analytics.goatcounter}.goatcounter.com/counter/TOT
         el.textContent = d.count;
       })
       .catch(function () {
-        host.remove();
+        document.querySelector(".visitor-count").remove();
       });
   })();
 </script>
