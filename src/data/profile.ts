@@ -18,7 +18,8 @@ export const site = {
 export const profile = {
   name: "Chiranjivi S",
   role: "Software Engineer",
-  tagline: "I enjoy building software and figuring out how things work under the hood.",
+  tagline:
+    "I enjoy building software and figuring out how things work under the hood.",
   bio: "I'm Chiranjivi. I recently graduated from IIIT Kottayam in Computer Science, and I'm an aspiring software engineer. I enjoy working on backend systems, cloud infrastructure and distributed systems, and I'm taking baby steps in AI engineering.",
 
   // Short facts shown as pills in the About section. Leave `[]` to hide them.
@@ -34,8 +35,8 @@ export const profile = {
   // Optional: link to your résumé / CV (can be a file in `public/`, e.g. "/resume.pdf").
   // Set to "" to hide the button.
   resumeUrl:
-    "https://drive.google.com/file/d/1_yszlQWurpJ7SFLDHCeoxqxSId1Xo9g8/view?usp=drive_link",
-
+    // "https://drive.google.com/file/d/1_yszlQWurpJ7SFLDHCeoxqxSId1Xo9g8/view?usp=drive_link" // => v9,
+    "https://drive.google.com/file/d/1Km1WvJQhOhlFT3EiLNrlo1fp-g49Z7cM/view?usp=sharing", // => v10,
 };
 
 // Social links shown in the Contact section.
@@ -78,7 +79,14 @@ export const skillGroups = [
   },
   {
     title: "Cloud & DevOps",
-    items: ["AWS", "Docker", "Kubernetes", "Terraform", "Kafka", "GitHub Actions"],
+    items: [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "Kafka",
+      "GitHub Actions",
+    ],
   },
   {
     title: "Databases",
@@ -105,7 +113,15 @@ export const projects = [
     name: "PixelVerse",
     description:
       "A 2D social media metaverse where users can form groups, choose a specific map, and invite friends to join in an immersive world, live as an avatar and have video conferences.",
-    tech: ["React", "Redux", "Node.js", "Express.js", "PostgreSQL", "WebRTC", "Socket.io"],
+    tech: [
+      "React",
+      "Redux",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "WebRTC",
+      "Socket.io",
+    ],
     url: "",
     repo: "https://github.com/Firoar/PixelVerse",
   },
