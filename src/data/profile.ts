@@ -1,12 +1,4 @@
-// ============================================================================
-// 👋 YOUR PROFILE
-// ----------------------------------------------------------------------------
-// This is the ONLY file you need to edit to update your portfolio.
-// Change any value below and the whole site updates automatically.
-// Leave an array empty (e.g. `skills: []`) and that section is hidden.
-// ============================================================================
-
-// Site-wide settings (used for the browser tab title, SEO, etc.)
+// Make changes here
 export const site = {
   title: "Chiranjivi S",
   description:
@@ -14,7 +6,7 @@ export const site = {
   url: "https://iamchiranjivi.in",
 };
 
-// Your personal info
+//  personal info
 export const profile = {
   name: "Chiranjivi S",
   role: "Software Engineer",
@@ -22,48 +14,33 @@ export const profile = {
     "I enjoy building software and figuring out how things work under the hood.",
   bio: "I'm Chiranjivi. I recently graduated from IIIT Kottayam in Computer Science, and I'm an aspiring software engineer. I enjoy working on backend systems, cloud infrastructure and distributed systems, and I'm taking baby steps in AI engineering.",
 
-  // Short facts shown as pills in the About section. Leave `[]` to hide them.
   facts: [],
 
   location: "Bengaluru, Karnataka, India",
   email: "chiru02.dev@gmail.com",
 
-  // Optional: drop a photo into `public/` and reference it here, e.g. "/avatar.jpg".
-  // Set to "" to hide the avatar entirely.
+
   avatar: "",
 
-  // Optional: link to your résumé / CV (can be a file in `public/`, e.g. "/resume.pdf").
-  // Set to "" to hide the button.
   resumeUrl:
     // "https://drive.google.com/file/d/1_yszlQWurpJ7SFLDHCeoxqxSId1Xo9g8/view?usp=drive_link" // => v9,
     "https://drive.google.com/file/d/1Km1WvJQhOhlFT3EiLNrlo1fp-g49Z7cM/view?usp=sharing", // => v10,
 };
 
-// Social links shown in the Contact section.
-// Add or remove entries freely — each one becomes a button.
+
 export const socials = [
   { label: "GitHub", url: "https://github.com/Firoar" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/chiranjivi-s/" },
 ];
 
-// One-liner shown at the top of the Contact section.
 export const contactBlurb =
   "Currently open to software engineering internships & full-time roles.";
 
-// Visitor analytics. Currently supports GoatCounter (free for personal use,
-// privacy-friendly, shows country-level geography in its dashboard).
-// 1. Create a free account at https://www.goatcounter.com and add your site.
-// 2. Paste your site code (the "yoursite" part of "yoursite.goatcounter.com")
-//    below. Set to "" to disable analytics entirely.
+
 export const analytics = {
   goatcounter: "drcxor", // e.g. "yourname" → tracks to yourname.goatcounter.com
 };
 
-// Skills, grouped by category. Add/remove groups or items as you like.
-// Known skills automatically get a small monochrome icon next to their name
-// (matched from the skill name — see src/data/skillIcons.ts). Unknown skills
-// simply show as plain text, so write names naturally: "TypeScript",
-// "Node.js", "PostgreSQL", etc.
 export const skillGroups = [
   {
     title: "Languages",
@@ -98,15 +75,14 @@ export const skillGroups = [
   },
 ];
 
-// Projects. Each entry becomes a card on the page.
-// `url` and `repo` are optional — set one or both to "" to hide that link.
+// projects
 export const projects = [
   {
     name: "Fourier Series Drawing Machine",
     description:
       "Recreates drawings using Fourier Series and FFT, converting an input path into Fourier coefficients and animating rotating epicycles that trace the original image on HTML Canvas.",
     tech: ["JavaScript", "HTML5 Canvas"],
-    url: "",
+    url: "https://drawingmachine.iamchiranjivi.in/",
     repo: "https://github.com/Firoar/fourier_series",
   },
   {
@@ -143,9 +119,7 @@ export const projects = [
   },
 ];
 
-// Work experience, newest first.
-// `description` can be a single string or a list of bullet points.
-// Leave `experience: []` to hide this section entirely.
+
 export const experience = [
   {
     company: "Motive",
